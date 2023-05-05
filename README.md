@@ -1,0 +1,5 @@
+# Zarinpal
+
+## License
+
+[MIT](./LICENSE)
