@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "Easy to implement solution for Zarinpal API",
   "license": "MIT",
-  "repository": "guoard/zarinpal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guoard/zarinpal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guoard/zarinpal/issues"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
