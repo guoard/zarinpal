@@ -19,7 +19,7 @@ test('should throw error if merchant id not 36 character', (t) => {
 
 test('should be able to get authority', async (t) => {
   const zarinpal = create('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', true);
-  const result = await zarinpal.PaymentRequest({
+  const response = await zarinpal.PaymentRequest({
     Amount: '1000',
     CallbackURL: 'http://localhost',
     Description: 'test',
@@ -27,5 +27,5 @@ test('should be able to get authority', async (t) => {
     Mobile: '09120000000',
   });
 
-  t.is(result.status, 100);
+  t.is(response.status, 100);
 });

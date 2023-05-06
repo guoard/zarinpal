@@ -35,7 +35,7 @@ class ZarinPal {
   }
 
   async PaymentRequest(input: PaymentRequest) {
-    const result = await this.client
+    const response = await this.client
       .post(config.API.PR, {
         json: {
           MerchantID: this.MerchantID,
@@ -48,14 +48,14 @@ class ZarinPal {
       }>();
 
     return {
-      status: result.Status,
-      authority: result.Authority,
-      url: config.PG(this.sandbox) + result.Authority,
+      status: response.Status,
+      authority: response.Authority,
+      url: config.PG(this.sandbox) + response.Authority,
     };
   }
 
   async PaymentVerification(input: PaymentVerification) {
-    const result = await this.client
+    const response = await this.client
       .post(config.API.PV, {
         json: {
           MerchantID: this.MerchantID,
@@ -68,13 +68,13 @@ class ZarinPal {
       }>();
 
     return {
-      status: result.Status,
-      RefID: result.RefID,
+      status: response.Status,
+      RefID: response.RefID,
     };
   }
 
   async UnverifiedTransactions() {
-    const result = await this.client
+    const response = await this.client
       .post(config.API.UT, {
         json: {
           MerchantID: this.MerchantID,
@@ -86,13 +86,13 @@ class ZarinPal {
       }>();
 
     return {
-      status: result.Status,
-      authorities: result.Authorities,
+      status: response.Status,
+      authorities: response.Authorities,
     };
   }
 
   async RefreshAuthority(input: RefreshAuthority) {
-    const result = await this.client
+    const response = await this.client
       .post(config.API.RA, {
         json: {
           MerchantID: this.MerchantID,
@@ -105,7 +105,7 @@ class ZarinPal {
       }>();
 
     return {
-      status: result.Status,
+      status: response.Status,
     };
   }
 }
