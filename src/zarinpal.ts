@@ -87,7 +87,7 @@ class ZarinPal {
 
     return {
       status: result.Status,
-      authorities: result.Authorities
+      authorities: result.Authorities,
     };
   }
 
@@ -113,7 +113,7 @@ class ZarinPal {
 export const create = function (
   MerchantID: string,
   sandbox = false,
-  options: Partial<Options>,
+  options?: Partial<Options>,
 ) {
   return new ZarinPal(MerchantID, sandbox, options);
 };
