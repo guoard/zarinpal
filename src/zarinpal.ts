@@ -82,12 +82,12 @@ class ZarinPal {
       })
       .json<{
         Status: number;
-        authorities: string;
+        Authorities: string;
       }>();
 
     return {
       status: result.Status,
-      authorities: result.authorities,
+      authorities: result.Authorities
     };
   }
 
