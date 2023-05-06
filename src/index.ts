@@ -1,1 +1,1 @@
-export * from './zarinpal';
+export { create } from './zarinpal';

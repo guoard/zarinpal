@@ -12,7 +12,7 @@ class ZarinPal {
 
   constructor(
     public readonly MerchantID: string,
-    public readonly sandbox: boolean,
+    public readonly sandbox = false,
     options?: Partial<Options>,
   ) {
     if (MerchantID.length !== config.merchantIDLength) {
@@ -110,10 +110,13 @@ class ZarinPal {
   }
 }
 
-export const create = function (
+function create(
   MerchantID: string,
-  sandbox = false,
+  sandbox?: boolean,
   options?: Partial<Options>,
 ) {
   return new ZarinPal(MerchantID, sandbox, options);
-};
+}
+
+export default ZarinPal;
+export { create };
